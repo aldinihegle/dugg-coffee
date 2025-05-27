@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Import Google Fonts - Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Set default font family and colors */
+:root {
+    /* Font */
+    --font-primary: 'Noto Sans', sans-serif;
+
+    /* Blue Colors */
+    --color-blue-100: #E6F4FF;
+    --color-blue-200: #CCE9FF;
+    --color-blue-300: #99D3FF;
+    --color-blue-400: #66BDFF;
+    --color-blue-500: #33A7FF;
+    --color-blue-600: #0091FF;
+    --color-blue-700: #006DBF;
+    --color-blue-800: #004980;
+    --color-blue-900: #002440;
+
+    /* Cream/Beige Colors */
+    --color-cream-100: #FFFBF0;
+    --color-cream-200: #FFF7E6;
+    --color-cream-300: #F5E6CC;
+    --color-cream-400: #E6D5B8;
+    --color-cream-500: #D4C4A4;
+    --color-cream-600: #BFB091;
+    --color-cream-700: #A69C7D;
+    --color-cream-800: #8C8569;
+    --color-cream-900: #736D55;
+
+    /* Green Colors */
+    --color-green-100: #F0FFE6;
+    --color-green-200: #E1FFCC;
+    --color-green-300: #C2FF99;
+    --color-green-400: #A3FF66;
+    --color-green-500: #84FF33;
+    --color-green-600: #66FF00;
+    --color-green-700: #4DBF00;
+    --color-green-800: #338000;
+    --color-green-900: #1A4000;
+
+    /* Purple/Violet Colors */
+    --color-purple-100: #F0F0FF;
+    --color-purple-200: #E6E6FF;
+    --color-purple-300: #CCCCFF;
+    --color-purple-400: #9999FF;
+    --color-purple-500: #6666FF;
+    --color-purple-600: #3333FF;
+    --color-purple-700: #0000CC;
+    --color-purple-800: #000099;
+    --color-purple-900: #000066;
+
+    /* Yellow/Gold Colors */
+    --color-yellow-100: #FFF9E6;
+    --color-yellow-200: #FFF3CC;
+    --color-yellow-300: #FFE799;
+    --color-yellow-400: #FFDB66;
+    --color-yellow-500: #FFCF33;
+    --color-yellow-600: #FFC300;
+    --color-yellow-700: #BF9200;
+    --color-yellow-800: #806200;
+    --color-yellow-900: #403100;
+
+    /* Red Colors */
+    --color-red-100: #FFE6E6;
+    --color-red-200: #FFCCCC;
+    --color-red-300: #FF9999;
+    --color-red-400: #FF6666;
+    --color-red-500: #FF3333;
+    --color-red-600: #FF0000;
+    --color-red-700: #CC0000;
+    --color-red-800: #990000;
+    --color-red-900: #660000;
+
+    /* Neutral Colors */
+    --color-dark: #1A1A1A;
+    --color-brown: #3D2F24;
+}
+
+/* Custom base styles */
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+    :root {
+        --font-primary: 'Noto Sans', sans-serif;
+    }
+
+    body {
+        font-family: var(--font-primary);
+        color: var(--color-dark);
+        background-color: var(--color-cream-100);
+    }
+}
+
+/* Custom components */
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded transition-colors;
+    }
+    
+    .btn-primary {
+        @apply bg-blue-600 text-white transition-all duration-300;
+    }
+    
+    .btn-secondary {
+        @apply bg-cream-300 hover:bg-cream-400 text-dark;
+    }
+
+    .hero-section {
+        @apply relative h-screen w-full overflow-hidden;
+    }
+
+    .hero-overlay {
+        @apply absolute inset-0 bg-black/50;
+    }
+
+    .hero-content {
+        @apply relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4;
+    }
+
+    .hero-subtitle {
+        @apply text-lg md:text-xl mb-4 tracking-wider;
+    }
+
+    .hero-title {
+        @apply text-4xl md:text-6xl font-bold leading-tight max-w-4xl mb-8;
+    }
+}
+
+/* Custom utilities */
+@layer utilities {
+    .font-light { font-weight: 300; }
+    .font-regular { font-weight: 400; }
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+}
+
+/* Color utility classes */
+.bg-blue { background-color: var(--color-blue-600); }
+.bg-cream { background-color: var(--color-cream-300); }
+.bg-green { background-color: var(--color-green-600); }
+.bg-purple { background-color: var(--color-purple-600); }
+.bg-yellow { background-color: var(--color-yellow-600); }
+.bg-red { background-color: var(--color-red-600); }
+.bg-dark { background-color: var(--color-dark); }
+.bg-brown { background-color: var(--color-brown); }
+
+.text-blue { color: var(--color-blue-600); }
+.text-cream { color: var(--color-cream-900); }
+.text-green { color: var(--color-green-600); }
+.text-purple { color: var(--color-purple-600); }
+.text-yellow { color: var(--color-yellow-600); }
+.text-red { color: var(--color-red-600); }
+.text-dark { color: var(--color-dark); }
+.text-light { color: var(--color-cream-100); }
+
+/* Hover states */
+.hover\:bg-blue:hover { background-color: var(--color-blue-700); }
+.hover\:bg-cream:hover { background-color: var(--color-cream-400); }
+.hover\:bg-green:hover { background-color: var(--color-green-700); }
+.hover\:bg-purple:hover { background-color: var(--color-purple-700); }
+.hover\:bg-yellow:hover { background-color: var(--color-yellow-700); }
+.hover\:bg-red:hover { background-color: var(--color-red-700); }
