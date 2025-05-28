@@ -32,7 +32,7 @@
                 <!-- Menu Item 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <a href="{{ route('menu.detail', ['id' => 1]) }}" class="block">
-                        <img src="{{ asset('images/coffee-beans.jpg') }}" alt="Kopi Tubruk" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Kopi Tubruk</h3>
                             <p class="text-gray-600 mb-4">Traditional Indonesian coffee made by boiling coarse coffee grounds with solid sugar.</p>
@@ -44,7 +44,7 @@
                 <!-- Menu Item 2 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <a href="{{ route('menu.detail', ['id' => 2]) }}" class="block">
-                        <img src="{{ asset('images/coffee-latte.jpg') }}" alt="Cafe Latte" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Cafe Latte</h3>
                             <p class="text-gray-600 mb-4">Espresso with steamed milk and a small layer of milk foam on top.</p>
@@ -56,7 +56,7 @@
                 <!-- Menu Item 3 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <a href="{{ route('menu.detail', ['id' => 3]) }}" class="block">
-                        <img src="{{ asset('images/cappuccino.jpg') }}" alt="Cappuccino" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Cappuccino</h3>
                             <p class="text-gray-600 mb-4">Equal parts espresso, steamed milk, and milk foam, topped with cocoa powder.</p>
@@ -68,7 +68,7 @@
                 <!-- Menu Item 4 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <a href="{{ route('menu.detail', ['id' => 4]) }}" class="block">
-                        <img src="{{ asset('images/ice-coffee.jpg') }}" alt="Es Kopi Susu" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Es Kopi Susu</h3>
                             <p class="text-gray-600 mb-4">Indonesian iced milk coffee with palm sugar syrup.</p>
@@ -80,7 +80,7 @@
                 <!-- Menu Item 5 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <a href="{{ route('menu.detail', ['id' => 5]) }}" class="block">
-                        <img src="{{ asset('images/americano.jpg') }}" alt="Americano" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Americano</h3>
                             <p class="text-gray-600 mb-4">Espresso diluted with hot water, similar strength to regular coffee.</p>
@@ -92,7 +92,7 @@
                 <!-- Menu Item 6 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <a href="{{ route('menu.detail', ['id' => 6]) }}" class="block">
-                        <img src="{{ asset('images/mocha.jpg') }}" alt="Cafe Mocha" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Cafe Mocha</h3>
                             <p class="text-gray-600 mb-4">Espresso with steamed milk and chocolate syrup, topped with whipped cream.</p>
