@@ -4,13 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>{{ config('app.name', 'Dugg Coffee') }}</title>
-    
+
     @vite('resources/js/app.js')
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <!-- Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -130,29 +134,29 @@
         // Initialize Gallery Swiper
         document.addEventListener('DOMContentLoaded', function() {
             const gallerySwiper = new Swiper('.gallery-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 20,
+                slidesPerView: 1.5,
+                centeredSlides: true,
+                spaceBetween: 30,
                 loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
+                speed: 500,
                 navigation: {
                     nextEl: '.gallery-next',
                     prevEl: '.gallery-prev',
                 },
                 breakpoints: {
                     640: {
-                        slidesPerView: 1.5,
-                        centeredSlides: true,
+                        slidesPerView: 1.8,
+                        spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView: 2.5,
-                        centeredSlides: true,
+                        slidesPerView: 2.2,
+                        spaceBetween: 50,
                     }
                 }
             });
         });
     </script>
+
+    @stack('scripts')
 </body>
 </html> 

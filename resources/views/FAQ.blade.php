@@ -2,7 +2,14 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/hero-bg.png') }}');">
+    <section class="relative h-[400px]">
+        <x-image 
+            src="{{ asset('images/faq.jpg') }}"
+            alt="FAQ Hero"
+            aspect="16/9"
+            size="xl"
+            class="absolute inset-0 w-full h-full"
+        />
         <div class="absolute inset-0" style="background: rgba(0,158,245,0.5);"></div>
         <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
             <h1 class="text-5xl font-medium text-white mb-4">FAQ</h1>

@@ -2,8 +2,15 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/hero-bg.png') }}');">
-        <div class="absolute inset-0" style="background: rgba(0,158,245,0.5);"></div>
+    <section class="relative h-[400px]">
+        <x-image 
+            src="{{ asset('images/menu-hero.jpg') }}"
+            alt="Menu Hero"
+            width="1920"
+            height="400"
+            class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
         <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
             <h1 class="text-5xl font-medium text-white mb-4">Our <span class="text-blue-400">Menu</span></h1>
             <div class="text-white text-lg">
@@ -20,86 +27,49 @@
             <!-- Menu Categories -->
             <div class="flex justify-center mb-12">
                 <div class="inline-flex rounded-lg border border-gray-200 p-1">
-                    <button class="px-6 py-2 rounded-lg bg-blue-600 text-white">All</button>
-                    <button class="px-6 py-2 text-gray-600 hover:text-blue-600">Hot Coffee</button>
-                    <button class="px-6 py-2 text-gray-600 hover:text-blue-600">Cold Coffee</button>
-                    <button class="px-6 py-2 text-gray-600 hover:text-blue-600">Non-Coffee</button>
+                    <a href="{{ route('menu', ['category' => 'all']) }}" 
+                        class="px-6 py-2 rounded-lg {{ !$category || $category === 'all' ? 'bg-blue-600 text-white' : 'text-gray-600 hover:text-blue-600' }}">
+                        All
+                    </a>
+                    @foreach($categories as $cat)
+                        <a href="{{ route('menu', ['category' => $cat]) }}" 
+                            class="px-6 py-2 {{ $category === $cat ? 'bg-blue-600 text-white rounded-lg' : 'text-gray-600 hover:text-blue-600' }}">
+                            {{ $cat }}
+                        </a>
+                    @endforeach
                 </div>
             </div>
 
             <!-- Menu Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Menu Item 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <a href="{{ route('menu.detail', ['id' => 1]) }}" class="block">
-                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Kopi Tubruk</h3>
-                            <p class="text-gray-600 mb-4">Traditional Indonesian coffee made by boiling coarse coffee grounds with solid sugar.</p>
-                            <div class="text-blue-600 font-medium">Rp. 25,000</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Menu Item 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <a href="{{ route('menu.detail', ['id' => 2]) }}" class="block">
-                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Cafe Latte</h3>
-                            <p class="text-gray-600 mb-4">Espresso with steamed milk and a small layer of milk foam on top.</p>
-                            <div class="text-blue-600 font-medium">Rp. 30,000</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Menu Item 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <a href="{{ route('menu.detail', ['id' => 3]) }}" class="block">
-                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Cappuccino</h3>
-                            <p class="text-gray-600 mb-4">Equal parts espresso, steamed milk, and milk foam, topped with cocoa powder.</p>
-                            <div class="text-blue-600 font-medium">Rp. 28,000</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Menu Item 4 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <a href="{{ route('menu.detail', ['id' => 4]) }}" class="block">
-                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Es Kopi Susu</h3>
-                            <p class="text-gray-600 mb-4">Indonesian iced milk coffee with palm sugar syrup.</p>
-                            <div class="text-blue-600 font-medium">Rp. 27,000</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Menu Item 5 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <a href="{{ route('menu.detail', ['id' => 5]) }}" class="block">
-                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Americano</h3>
-                            <p class="text-gray-600 mb-4">Espresso diluted with hot water, similar strength to regular coffee.</p>
-                            <div class="text-blue-600 font-medium">Rp. 25,000</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Menu Item 6 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <a href="{{ route('menu.detail', ['id' => 6]) }}" class="block">
-                    <img src="{{ asset('images/menu/hero-bg.png') }}" alt="Coffee" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Cafe Mocha</h3>
-                            <p class="text-gray-600 mb-4">Espresso with steamed milk and chocolate syrup, topped with whipped cream.</p>
-                            <div class="text-blue-600 font-medium">Rp. 32,000</div>
-                        </div>
-                    </a>
-                </div>
+                @forelse($menuItems as $item)
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <a href="{{ route('menu.detail', ['id' => $item->id]) }}" class="block">
+                            <div class="aspect-w-4 aspect-h-3">
+                                @if($item->image)
+                                    <img src="{{ asset($item->image) }}" 
+                                        alt="{{ $item->name }}" 
+                                        class="w-full h-full object-cover"
+                                    />
+                                @else
+                                    <img src="{{ asset('images/menu/default.jpg') }}" 
+                                        alt="{{ $item->name }}" 
+                                        class="w-full h-full object-cover"
+                                    />
+                                @endif
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">{{ $item->name }}</h3>
+                                <p class="text-gray-600 mb-4">{{ $item->description }}</p>
+                                <div class="text-blue-600 font-medium">Rp. {{ number_format($item->price, 0, ',', '.') }}</div>
+                            </div>
+                        </a>
+                    </div>
+                @empty
+                    <div class="col-span-3 text-center py-12">
+                        <p class="text-gray-500 text-lg">No menu items found in this category.</p>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>

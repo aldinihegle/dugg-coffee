@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/hero-bg.png') }}');">
+    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/aboutus.jpg') }}');">
         <div class="absolute inset-0" style="background: rgba(0,158,245,0.5);"></div>
         <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
             <h1 class="text-5xl font-medium text-white mb-4">About <span class="text-blue-400">Us</span></h1>
@@ -19,7 +19,13 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="rounded-lg overflow-hidden">
-                <img src="{{ asset('images/hero-bg.png') }}" alt="Coffee Beans" class="w-1/2 h-1/2   object-cover">
+                    <x-image 
+                        src="{{ asset('images/hero-bg.png') }}"
+                        alt="Coffee Beans"
+                        aspect="4/3"
+                        size="lg"
+                        rounded="true"
+                    />
                 </div>
                 <div>
                     <h2 class="text-3xl font-bold mb-6">Our <span class="text-blue-400">Story</span></h2>
@@ -52,15 +58,20 @@
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="border-2 border-[#FFF8AE] rounded-lg overflow-hidden">
-                <div class="flex">
+                <div class="flex flex-col md:flex-row">
                     <div class="flex-1 bg-[#FFF8AE] p-8" style="background: rgba(255,248,174,0.5);">
                         <h3 class="text-2xl font-bold mb-4">Meet Mr. Tralalelo Tralala</h3>
                         <p class="text-gray-600">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In ut massa mi. Donec sit amet nulla lacus. Aliquam erat volutpat. In id fermentum augue, ut pellentesque leo.
                         </p>
                     </div>
-                    <div class="w-1/2">
-                    <img src="{{ asset('images/hero-bg.png') }}" alt="Coffee Beans" class="w-1/2 h-1/2   object-cover"> 
+                    <div class="w-full md:w-1/2">
+                        <x-image 
+                            src="{{ asset('images/hero-bg.png') }}"
+                            alt="Team Member"
+                            aspect="4/3"
+                            size="lg"
+                        />
                     </div>
                 </div>
             </div>
