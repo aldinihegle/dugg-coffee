@@ -6,9 +6,10 @@
         <div class="absolute inset-0" style="background: rgba(0,158,245,0.3);"></div>
         <div class="relative container mx-auto px-4 h-full flex items-center justify-center">
             <div class="text-center text-light max-w-2xl">
-                <h1 class="text-2xl md:text-3xl font-semibold mb-4 text-white">MADE WITH LOVE IN BANDUNG</h1>
-                <h2 class="text-5xl md:text-7xl font-normal mb-8 text-white">FRESHLY ROASTED,<br>HONESTLY CRAFTED</h2>
-                <a href="/menu" class="inline-block px-8 py-4 bg-[#009EF5] hover:bg-blue-600 rounded-lg text-lg font-medium transition-colors text-white">
+                <h1 class="text-2xl md:text-3xl font-semibold mb-4 text-[#FEE8AE]">MADE WITH LOVE IN BANDUNG</h1>
+                <h2 class="text-5xl md:text-6xl font-normal mb-8 text-white">FRESHLY ROASTED,</h2>
+                <h2 class="text-5xl md:text-6xl font-normal mb-8 text-white">HONESTLY CRAFTED</h2>
+                <a href="{{ route('menu') }}" class="inline-block px-8 py-4 bg-[#009EF5] hover:bg-blue-600 rounded-lg text-lg font-medium transition-colors text-white">
                     View Our Menu
                 </a>
             </div>
@@ -103,155 +104,124 @@
                     <p class="text-gray-600 mb-3">
                     Di Dugg Coffee, kami percaya kopi bukan sekadar minuman — tapi pengalaman. Setiap gelas diracik dari biji pilihan dan diseduh dengan penuh perhatian, agar menghadirkan rasa yang berkarakter dan konsisten. Kami memegang filosofi: kopi yang baik dimulai dari kualitas dan rasa yang jujur. Dari aroma pertama hingga tegukan terakhir, kamu akan merasakan bedanya.
                     </p>
-                    </p>
-                    <a href="#" class="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                    <a href="{{ route('about') }}" class="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
                         Know us better
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
 <!-- Menu Section -->
-<section class="py-16 bg-gray-800 relative">
-    <div class="absolute inset-0 z-0">
-        <x-image 
-            src="{{ asset('images/bg-menu.png') }}"
-            alt="Menu Background"
-            class="w-full h-full object-cover opacity-20"
-        />
-    </div>
-    <div class="container mx-auto px-4 max-w-full relative z-10">
-        <div class="flex flex-col items-start mb-12">
-            <div class="flex items-center gap-2 mb-4">
-                <i class="fas fa-gift text-white"></i>
-                <span class="uppercase text-white text-sm tracking-wider">MENU</span>
+    <section class="relative py-16 bg-[#2E2E2E]">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="mb-4">
+                <div class="flex items-center mb-1">
+                    <i class="fas fa-book-reader text-blue text-sm mr-2"></i>
+                    <span class="text-blue text-sm  tracking-widest font-bold">MENU</span>
+                </div>
+                <div class="h-[1px] w-[120px] bg-blue"></div>
             </div>
-            <div class="flex justify-between items-center w-full">
-                <h2 class="text-5xl font-bold">
-                    <span class="text-white">Our</span>
-                    <span class="text-gray-400">Menu</span>
-                </h2>
-                <a href="/menu" class="inline-block px-8 py-3 bg-gray-100 hover:bg-white rounded-full text-gray-800 transition-colors">
-                    SELENGKAPNYA
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+            <div class="flex justify-between items-center mb-2">
+                <h2 class="text-4xl font-bold text-white">Our <span class="text-blue">Menu</span></h2>
+                <a href="{{ route('menu') }}" class="bg-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">See more</a>
+            </div>
+
+            <p class="text-white/80 max-w-2xl mb-6">Varian menu dengan kekuatan bahan-bahan pilihan yang dapat meningkatkan pengalaman ngopi harianmu</p>
+
+            <div class="flex gap-8">
+                <!-- Left Side: 2x2 Grid -->
+                <div class="grid grid-cols-2 gap-6 flex-[2]">
+                    <!-- Menu Item 1 -->
+                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
+                        <div class="relative mb-3">
+                            <img src="{{ asset('images/menu/baby-on-black.png') }}" alt="Baby on Black" class="w-full h-40 object-cover rounded-lg">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-gray-900 font-semibold mb-1">Baby on Black</h3>
+                                <p class="text-gray-600 text-sm leading-snug">Chocolate roasted dengan segelas kopi hitam yang pekat</p>
+                            </div>
+                            <span class="text-blue font-bold text-lg">27K</span>
             </div>
         </div>
 
-        <!-- Grid for 6 or 8 Menu Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Menu Item 1 -->
-            <div class="bg-white p-4 rounded-lg transition-transform hover:scale-105">
-                <div class="aspect-square mb-2">
-                    <x-image 
-                        src="{{ asset('images/menu/chocolate.png') }}"
-                        alt="Kopi Tubruk"
-                        width="100"
-                        height="100"
-                        class="w-full h-full object-contain rounded-lg"
-                    />
+                    <!-- Menu Item 2 -->
+                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
+                        <div class="relative mb-3">
+                            <img src="{{ asset('images/menu/es-kopi-susu.png') }}" alt="Es Kopi Susu" class="w-full h-40 object-cover rounded-lg">
                 </div>
-                <h3 class="text-base font-bold text-[#009EF5] mb-1">Kopi Tubruk</h3>
-                <p class="text-xs text-gray-600">
-                    Menu Dugg Coffee sangat beragam dari yang coffee based, non-coffee, etc
-                </p>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-gray-900 font-semibold mb-1">Es Kopi Susu</h3>
+                                <p class="text-gray-600 text-sm leading-snug">Kopi susu klasik dengan es batu, segar dan nikmat</p>
             </div>
-
-            <!-- Menu Item 2 -->
-            <div class="bg-white p-4 rounded-lg transition-transform hover:scale-105">
-                <div class="aspect-square mb-2">
-                    <x-image 
-                        src="{{ asset('images/menu/hot-latte.png') }}"
-                        alt="Americano"
-                        width="100"
-                        height="100"
-                        class="w-full h-full object-contain rounded-lg"
-                    />
+                            <span class="text-blue font-bold text-lg">23K</span>
                 </div>
-                <h3 class="text-base font-bold text-[#009EF5] mb-1">Americano</h3>
-                <p class="text-xs text-gray-600">
-                    Espresso shot dengan tambahan air panas, menghasilkan rasa kopi yang kuat
-                </p>
             </div>
 
             <!-- Menu Item 3 -->
-            <div class="bg-white p-4 rounded-lg transition-transform hover:scale-105">
-                <div class="aspect-square mb-2">
-                    <x-image 
-                        src="{{ asset('images/menu/hot-latte.png') }}"
-                        alt="Cafe Latte"
-                        width="100"
-                        height="100"
-                        class="w-full h-full object-contain rounded-lg"
-                    />
+                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
+                        <div class="relative mb-3">
+                            <img src="{{ asset('images/menu/hot-latte.png') }}" alt="Hot Latte" class="w-full h-40 object-cover rounded-lg">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-gray-900 font-semibold mb-1">Hot Latte</h3>
+                                <p class="text-gray-600 text-sm leading-snug">Espresso dan susu panas dengan busa lembut</p>
+                            </div>
+                            <span class="text-blue font-bold text-lg">25K</span>
                 </div>
-                <h3 class="text-base font-bold text-[#009EF5] mb-1">Cafe Latte</h3>
-                <p class="text-xs text-gray-600">
-                    Perpaduan sempurna espresso dengan steamed milk dan foam yang lembut
-                </p>
             </div>
 
             <!-- Menu Item 4 -->
-            <div class="bg-white p-4 rounded-lg transition-transform hover:scale-105">
-                <div class="aspect-square mb-2">
-                    <x-image 
-                        src="{{ asset('images/menu/es-kopi-susu.png') }}"
-                        alt="Cappuccino"
-                        width="100"
-                        height="100"
-                        class="w-full h-full object-contain rounded-lg"
-                    />
+                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
+                        <div class="relative mb-3">
+                            <img src="{{ asset('images/menu/chocolate.png') }}" alt="Chocolate" class="w-full h-40 object-cover rounded-lg">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-gray-900 font-semibold mb-1">Chocolate</h3>
+                                <p class="text-gray-600 text-sm leading-snug">Coklat panas dengan sentuhan manis dan lembut</p>
+                            </div>
+                            <span class="text-blue font-bold text-lg">20K</span>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="text-base font-bold text-[#009EF5] mb-1">Cappuccino</h3>
-                <p class="text-xs text-gray-600">
-                    Kombinasi seimbang espresso, steamed milk, dan foam yang tebal
-                </p>
-            </div>
 
-            <!-- Menu Item 5 -->
-            <div class="bg-white p-4 rounded-lg transition-transform hover:scale-105">
-                <div class="aspect-square mb-2">
-                    <x-image 
-                        src="{{ asset('images/menu/hot-latte.png') }}"
-                        alt="Iced Coffee Milk"
-                        width="100"
-                        height="100"
-                        class="w-full h-full object-contain rounded-lg"
-                    />
-                </div>
-                <h3 class="text-base font-bold text-[#009EF5] mb-1">Iced Coffee Milk</h3>
-                <p class="text-xs text-gray-600">
-                    Segarnya iced coffee dengan campuran susu, pilihan yang cocok untuk hari panas.
-                </p>
+                <!-- Right Side: Featured Item -->
+                <div class="flex-1">
+                    <div class="bg-white rounded-lg h-full relative overflow-hidden group shadow-lg">
+                        <img src="{{ asset('images/menu/matcha-feature.png') }}" alt="Matcha" class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-yellow-400 text-xl">★</span>
+                                <span class="text-sm font-medium text-white bg-blue/20 px-3 py-1 rounded-full">Best Seller</span>
             </div>
-
-            <!-- Menu Item 6 -->
-            <div class="bg-white p-4 rounded-lg transition-transform hover:scale-105">
-                <div class="aspect-square mb-2">
-                    <x-image 
-                        src="{{ asset('images/menu/iced-coffee.png') }}"
-                        alt="Iced Coffee"
-                        width="100"
-                        height="100"
-                        class="w-full h-full object-contain rounded-lg"
-                    />
+                            <h3 class="text-3xl font-bold text-white mb-2">Matcha</h3>
+                            <p class="text-gray-200 text-sm mb-3">Green tea dengan tekstur yang lembut</p>
+                            <span class="text-blue font-semibold text-xl">30K</span>
                 </div>
-                <h3 class="text-base font-bold text-[#009EF5] mb-1">Iced Coffee</h3>
-                <p class="text-xs text-gray-600">
-                    Kopi yang disajikan dengan es batu, memberi kesegaran ekstra.
-                </p>
+            </div>
             </div>
         </div>
     </div>
 </section>
 
-
-
     <!-- Testimonials Section -->
+
     <section class="py-16 bg-cream-100">
-        <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="mb-4 text-center">
+            <div class="flex items-center mb-1 justify-center space-x-2"> 
+                <i class="fas fa-book-reader text-black text-sm"></i>
+                <span class="text-black text-sm tracking-widest font-bold">REVIEWS</span>
+            </div>
+            <div class="h-[1px] w-[120px] bg-black mx-auto mt-2">
+        </div>
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Our Customer</h2>
+                <h2 class="text-3xl font-bold mb-4">Our <span class="text-[#009EF5]">Customer</span></h2>
                 <div class="flex justify-center items-center mb-4">
                     <span class="text-2xl font-bold">{{ number_format($averageRating, 1) }}</span>
                     <div class="flex text-yellow-400 ml-2">
@@ -299,7 +269,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @forelse($featuredReviews as $review)
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <div class="flex items-center mb-4">
+                        <div class="flex items-center justify-center mb-4">
                             @if($review->avatar)
                                 <img src="{{ asset('storage/' . $review->avatar) }}" alt="{{ $review->name }}" class="w-12 h-12 rounded-full mr-4 object-cover">
                             @else
@@ -444,13 +414,19 @@
 
     <!-- Recent News Section -->
     <section class="py-16 bg-blue-50">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="mb-4 text-center">
+            <div class="flex items-center mb-1 justify-center space-x-2"> 
+                <i class="fas fa-book-reader text-black text-sm"></i>
+                <span class="text-black text-sm tracking-widest font-bold">BLOGS</span>
+            </div>
+            <div class="h-[1px] w-[120px] bg-black mx-auto mt-2">
+        </div>
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-2">Recent News</h2>
-                <h3 class="text-2xl font-bold mb-4">Latest <span class="text-[#009EF5]">Updates</span></h3>
-                <p class="text-gray-600">Stay updated with our latest news and coffee stories</p>
+                <h2 class="text-3xl font-bold mb-2">Recent <span class="text-[#009EF5]">News</span></h2>
+                <p class="text-gray-600">Dibawah ini berisikan berita-berita dan tren-tren terkini dan ter update seputar kopi di seluruh dunia</p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @php
                     $recentBlogs = App\Models\Blog::where('is_published', true)
@@ -461,7 +437,7 @@
 
                 @forelse($recentBlogs as $blog)
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105">
-                        <a href="{{ route('blog.show', $blog->slug) }}" class="block">
+                        <a href="{{ route('blog.show', $blog->id) }}" class="block">
                             <div class="relative h-48">
                                 @if($blog->image)
                                     <img 
@@ -503,81 +479,132 @@
     </section>
 
     <!-- Gallery Section -->
-<section class="py-16 bg-cream-100">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <div class="inline-flex items-center gap-2 mb-4">
-                <i class="fas fa-images text-blue-400 text-xl"></i>
-                <span class="uppercase text-sm tracking-wider">GALLERY</span>
+    <section class="py-20">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="mb-4 text-center">
+            <div class="flex items-center mb-1 justify-center space-x-2"> 
+                <i class="fas fa-book-reader text-black text-sm"></i>
+                <span class="text-black text-sm tracking-widest font-bold">GALLERY</span>
             </div>
-            <h2 class="text-3xl font-bold">Our <span class="text-blue-400">Place</span></h2>
+            <div class="h-[1px] w-[120px] bg-black mx-auto mt-2">
+        </div>
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-4">
+                <h2 class="text-4xl font-bold">Our <span class="text-blue">Place</span></h2>
         </div>
         
-        <div class="relative px-12">
-            <!-- Swiper Container -->
-            <div class="swiper gallery-swiper">
+            <!-- Swiper Gallery -->
+            <div class="gallery-swiper">
                 <div class="swiper-wrapper">
-                    @for($i = 1; $i <= 3; $i++)
+                    <!-- Original slides -->
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/gallery/gallery-1.png') }}"
+                             alt="Coffee Shop Interior View 1"
+                             class="w-full object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/gallery/gallery-2.png') }}"
+                             alt="Coffee Shop Interior View 2"
+                             class="w-full object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/gallery/gallery-3.png') }}"
+                             alt="Coffee Shop Interior View 3"
+                             class="w-full object-cover rounded-xl">
+                    </div>
+
+                    <!-- Duplicate slides for smooth loop -->
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/gallery/gallery-1.png') }}"
+                             alt="Coffee Shop Interior View 1"
+                             class="w-full object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/gallery/gallery-2.png') }}"
+                             alt="Coffee Shop Interior View 2"
+                             class="w-full object-cover rounded-xl">
+                    </div>
+                    
                         <div class="swiper-slide">
-                            <img 
-                                src="{{ asset('images/gallery/gallery-' . $i . '.png') }}"
-                                alt="Gallery Image {{ $i }}"
-                                class="w-full h-[280px] object-cover rounded-xl"
-                            />
-                        </div>
-                    @endfor
+                        <img src="{{ asset('images/gallery/gallery-3.png') }}"
+                             alt="Coffee Shop Interior View 3"
+                             class="w-full object-cover rounded-xl">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Navigation Buttons -->
-            <button class="gallery-prev absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white hover:bg-blue-400 hover:text-white text-blue-400 rounded-full shadow-lg transition-all z-10">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="gallery-next absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white hover:bg-blue-400 hover:text-white text-blue-400 rounded-full shadow-lg transition-all z-10">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+                
+                <!-- Navigation Buttons -->
+                <div class="gallery-prev">
+                    <i class="fas fa-chevron-left"></i>
+                        </div>
+                <div class="gallery-next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
         </div>
     </div>
 </section>
-
-@push('scripts')
-<script>
-    // Initialize Swiper for Gallery
-    const gallerySwiper = new Swiper('.gallery-swiper', {
-        slidesPerView: 'auto',
-        initialSlide: 1,
-        loop: true,
-        speed: 500,
-        centeredSlides: true,
-        spaceBetween: 20,
-        allowTouchMove: false,
-        navigation: {
-            nextEl: '.gallery-next',
-            prevEl: '.gallery-prev',
-        }
-    });
-</script>
-@endpush
-
+    <!-- Location Section -->
+    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/FeedsDuggDetails1.jpg') }}');">
+        <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
+        <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
+            <div class="mb-4 text-center">
+                <div class="flex items-center mb-1 justify-center space-x-2"> 
+                    <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                    <span class="text-white text-sm tracking-widest font-bold">LOCATION</span>
+                </div>
+                <div class="h-[1px] w-[120px] bg-white mx-auto mt-2"></div>
+            </div>
+            <h2 class="text-4xl font-bold text-white mb-8">We're Located On Gegerkalong Girang Street, In Sukasari, Bandung.</h2>
+            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center px-3 py-2 bg-blue-600 text-sm hover:bg-blue-700 text-white rounded-lg transition-colors">
+                Locate Us On Maps
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <p class="text-sm font-bold text-[#FEE8AE] mt-8 underline">Jl. Gegerkalong Girang No.66, Isola, Kec. Sukasari, Kota Bandung, Jawa Barat 40153</p>
+        </div>
+    </section>
     <!-- Instagram Feed Section -->
     <section class="py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Follow us on Instagram</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                @for ($i = 1; $i <= 4; $i++)
-                    <a href="https://www.instagram.com/duggcoffee.66/" class="block relative group">
-                        <x-image 
-                            src="{{ asset('images/instagram/instagram-' . $i . '.png') }}"
-                            alt="Instagram"
-                            width="300"
-                            height="300"
-                            class="group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div class="absolute inset-0 bg-dark/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fab fa-instagram text-white text-3xl"></i>
+            <div class="instagram-swiper">
+                <div class="swiper-wrapper">
+                    @for ($i = 1; $i <= 4; $i++)
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/duggcoffee.66/" class="block relative group">
+                                <x-image 
+                                    src="{{ asset('images/instagram/instagram-' . $i . '.png') }}"
+                                    alt="Instagram"
+                                    width="300"
+                                    height="300"
+                                    class="group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute inset-0 bg-dark/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i class="fab fa-instagram text-white text-3xl"></i>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                @endfor
+                    @endfor
+
+                    <!-- Duplicate slides for smooth loop -->
+                    @for ($i = 1; $i <= 4; $i++)
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/duggcoffee.66/" class="block relative group">
+                                <x-image 
+                                    src="{{ asset('images/instagram/instagram-' . $i . '.png') }}"
+                                    alt="Instagram"
+                                    width="300"
+                                    height="300"
+                                    class="group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute inset-0 bg-dark/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i class="fab fa-instagram text-white text-3xl"></i>
+                                </div>
+                            </a>
+                        </div>
+                    @endfor
+                </div>
             </div>
             <div class="text-center mt-8">
                 <a href="https://www.instagram.com/duggcoffee.66/" target="_blank" class="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors">

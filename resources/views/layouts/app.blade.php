@@ -12,12 +12,24 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
     <!-- Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Debug Script untuk Gallery -->
+    <script>
+        function debugGallery() {
+            console.log('Checking gallery initialization...');
+            const galleryElement = document.querySelector('.gallery-swiper');
+            if (galleryElement) {
+                console.log('Gallery element found');
+                console.log('Gallery classes:', galleryElement.className);
+                console.log('Number of slides:', galleryElement.querySelectorAll('.swiper-slide').length);
+            } else {
+                console.log('Gallery element not found');
+            }
+        }
+    </script>
 </head>
 <body class="font-primary">
     <!-- Navbar -->
@@ -30,7 +42,7 @@
                 </a>
 
                 <!-- Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8 font-bold">
                     <a href="{{ route('home') }}" class="text-dark hover:text-blue-600 transition-colors">Home</a>
                     <a href="{{ route('menu') }}" class="text-dark hover:text-blue-600 transition-colors">Menu</a>
                     <a href="{{ route('about') }}" class="text-dark hover:text-blue-600 transition-colors">About Us</a>
@@ -71,47 +83,65 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Logo and Social Links -->
-                <div class="space-y-4">
-                    <img src="{{ asset('images/logo/logofooter.png') }}" alt="Dugg Coffee" class="h-11">
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                <div class="flex flex-col items-center space-y-4">
+                    <img src="{{ asset('images/logo/logofooter.png') }}" alt="Dugg Coffee" class="w-[200px] h-[150px]">
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="text-blue-400 hover:text-blue-500 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-500 text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-500 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-500 text-xl"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div>
+                <!-- Quick Links Column 1 -->
+                <div class="flex flex-col items-center space-y-4">
                     <h3 class="text-lg font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="{{ route('menu') }}" class="hover:text-blue-400">Menu</a></li>
-                        <li><a href="{{ route('about') }}" class="hover:text-blue-400">About Us</a></li>
-                        <li><a href="{{ route('blog') }}" class="hover:text-blue-400">Blog</a></li>
-                        <li><a href="{{ route('faq') }}" class="hover:text-blue-400">FAQ</a></li>
+                    <ul class="space-y-3">
+                        <li><a href="{{ route('about') }}" class="hover:text-blue-400 flex items-center">
+                            About Us
+                        </a></li>
+                        <li><a href="{{ route('blog') }}" class="hover:text-blue-400 flex items-center">
+                            Blog
+                        </a></li>
+                        <li><a href="{{ route('menu') }}" class="hover:text-blue-400 flex items-center">
+                            Menu
+                        </a></li>
+                        <li><a href="{{ route('faq') }}" class="hover:text-blue-400 flex items-center">
+                            Ulasan
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links Column 2 -->
+                <div class="flex flex-col items-left space-y-4">
+                    <h3 class="text-lg font-bold mb-11"></h3>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:hello@duggcoffee.com" class="hover:text-blue-400 flex items-center">
+                            Contact Us
+                        </a></li>
+                        <li><a href="#gallery" class="hover:text-blue-400 flex items-center">
+                            Gallery
+                        </a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Contact</h3>
-                    <ul class="space-y-2">
-                        <li>📍 Bandung, Indonesia</li>
-                        <li>📞 +62 123 456 789</li>
-                        <li>✉️ hello@duggcoffee.com</li>
+                <div class="flex flex-col items-left space-y-4">
+                    <h3 class="text-lg font-bold mb-4 ">Contact</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-blue-400 flex items-center">
+                            <i class="fas fa-phone-square text-blue-400 mr-2 text-lg"></i>
+                            +62 123 456 789
+                        </a></li>
+                        <li><a href="#" class="hover:text-blue-400 flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-400 mr-2 text-lg"></i>
+                            Jl. Gegerkalong, Bandung, Jawa Barat
+                        </a></li>
+                        <li><a href="mailto:hello@duggcoffee.com" class="hover:text-blue-400 flex items-center">
+                            <i class="far fa-envelope-open text-blue-400 mr-2 text-lg"></i>
+                            hello@duggcoffee.com
+                        </a></li>
                     </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Your email address" 
-                               class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500">
-                        <button type="submit" 
-                                class="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded transition-colors">
-                            Subscribe
-                        </button>
-                    </form>
                 </div>
             </div>
 
@@ -131,29 +161,54 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Initialize Gallery Swiper
+        // Inisialisasi Gallery Swiper
         document.addEventListener('DOMContentLoaded', function() {
-            const gallerySwiper = new Swiper('.gallery-swiper', {
-                slidesPerView: 1.5,
-                centeredSlides: true,
-                spaceBetween: 30,
-                loop: true,
-                speed: 500,
-                navigation: {
-                    nextEl: '.gallery-next',
-                    prevEl: '.gallery-prev',
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1.8,
-                        spaceBetween: 40,
-                    },
-                    1024: {
-                        slidesPerView: 2.2,
-                        spaceBetween: 50,
+            if (document.querySelector('.gallery-swiper')) {
+                const gallerySwiper = new Swiper('.gallery-swiper', {
+                    slidesPerView: 3,
+                    centeredSlides: true,
+                    loop: true,
+                    loopedSlides: 6,
+                    speed: 800,
+                    spaceBetween: 30,
+                    allowTouchMove: false,
+                    simulateTouch: false,
+                    direction: 'horizontal',
+                    effect: 'slide',
+                    navigation: {
+                        nextEl: '.gallery-next',
+                        prevEl: '.gallery-prev',
                     }
-                }
-            });
+                });
+            }
+
+            // Inisialisasi Instagram Swiper
+            if (document.querySelector('.instagram-swiper')) {
+                const instagramSwiper = new Swiper('.instagram-swiper', {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    loop: true,
+                    speed: 3000,
+                    autoplay: {
+                        delay: 0,
+                        disableOnInteraction: false
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1,
+                        },
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                        }
+                    }
+                });
+            }
         });
     </script>
 

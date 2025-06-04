@@ -30,7 +30,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{blog}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/faq', function () {
     return view('faq');

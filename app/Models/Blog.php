@@ -11,13 +11,24 @@ class Blog extends Model
 
     protected $fillable = [
         'title',
-        'slug',
         'content',
         'image',
-        'is_published'
+        'is_featured',
+        'is_active'
     ];
 
     protected $casts = [
-        'is_published' => 'boolean'
+        'is_featured' => 'boolean',
+        'is_active' => 'boolean'
     ];
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
+
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', true);
+    }
 }

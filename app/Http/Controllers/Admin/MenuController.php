@@ -8,6 +8,14 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
+    protected $categories = [
+        'Beverages',
+        'Seasonal',
+        'Signature',
+        'Snack',
+        'Main Course'
+    ];
+
     public function index()
     {
         $menus = Menu::latest()->paginate(10);
@@ -16,60 +24,66 @@ class MenuController extends Controller
 
     public function create()
     {
-        return view('admin.menus.create');
+        $categories = $this->categories;
+        return view('admin.menus.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|max:255',
-            'category' => 'required',
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
             'price' => 'required|numeric|min:0',
-            'description' => 'nullable',
+            'category' => 'required|string|in:' . implode(',', $this->categories),
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'is_active' => 'boolean'
         ]);
 
+        $data = $request->all();
+        
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('menus', 'public');
-            $validated['image'] = 'storage/' . $imagePath;
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/menu'), $imageName);
+            $data['image'] = 'images/menu/' . $imageName;
         }
 
-        $validated['is_active'] = $request->has('is_active');
-
-        Menu::create($validated);
+        Menu::create($data);
 
         return redirect()->route('admin.menus.index')
-            ->with('success', 'Menu item created successfully.');
+            ->with('success', 'Menu created successfully.');
     }
 
     public function edit(Menu $menu)
     {
-        return view('admin.menus.edit', compact('menu'));
+        $categories = $this->categories;
+        return view('admin.menus.edit', compact('menu', 'categories'));
     }
 
     public function update(Request $request, Menu $menu)
     {
-        $validated = $request->validate([
-            'name' => 'required|max:255',
-            'category' => 'required',
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
             'price' => 'required|numeric|min:0',
-            'description' => 'nullable',
+            'category' => 'required|string|in:' . implode(',', $this->categories),
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'is_active' => 'boolean'
         ]);
 
+        $data = $request->all();
+
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('menus', 'public');
-            $validated['image'] = 'storage/' . $imagePath;
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/menu'), $imageName);
+            $data['image'] = 'images/menu/' . $imageName;
         }
 
-        $validated['is_active'] = $request->has('is_active');
-
-        $menu->update($validated);
+        $menu->update($data);
 
         return redirect()->route('admin.menus.index')
-            ->with('success', 'Menu item updated successfully.');
+            ->with('success', 'Menu updated successfully.');
     }
 
     public function destroy(Menu $menu)

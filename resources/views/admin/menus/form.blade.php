@@ -37,9 +37,11 @@
                                 id="category"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                             <option value="">Select Category</option>
-                            <option value="Coffee" {{ (old('category', $menu->category ?? '') == 'Coffee') ? 'selected' : '' }}>Coffee</option>
-                            <option value="Non-Coffee" {{ (old('category', $menu->category ?? '') == 'Non-Coffee') ? 'selected' : '' }}>Non-Coffee</option>
-                            <option value="Food" {{ (old('category', $menu->category ?? '') == 'Food') ? 'selected' : '' }}>Food</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category }}" {{ (old('category', $menu->category ?? '') == $category) ? 'selected' : '' }}>
+                                    {{ $category }}
+                                </option>
+                            @endforeach
                         </select>
                         @error('category')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>

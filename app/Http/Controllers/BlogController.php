@@ -16,18 +16,14 @@ class BlogController extends Controller
         return view('blog', compact('blogs'));
     }
 
-    public function show($slug)
+    public function show(Blog $blog)
     {
-        $blog = Blog::where('slug', $slug)
-            ->where('is_published', true)
-            ->firstOrFail();
-            
-        $relatedBlogs = Blog::where('id', '!=', $blog->id)
-            ->where('is_published', true)
+        $relatedBlogs = Blog::active()
+            ->where('id', '!=', $blog->id)
             ->latest()
             ->take(3)
             ->get();
-            
+
         return view('blog_detail', compact('blog', 'relatedBlogs'));
     }
 }

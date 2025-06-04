@@ -43,7 +43,7 @@
                         </td>
                         <td class="px-6 py-4">
                             <div class="text-sm font-medium text-gray-900">{{ $blog->title }}</div>
-                            <div class="text-sm text-gray-500">{{ \Illuminate\Support\Str::limit($blog->slug, 30) }}</div>
+                            <div class="text-sm text-gray-500">{{ \Illuminate\Support\Str::limit($blog->content, 100) }}</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             @if($blog->is_published)

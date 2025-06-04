@@ -1,31 +1,19 @@
+@php
+    use Illuminate\Support\Str;
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="relative h-[300px]">
-        @if($blog->image)
-            <img src="{{ asset('storage/' . $blog->image) }}" 
-                alt="{{ $blog->title }}" 
-                class="absolute inset-0 w-full h-full object-cover"
-            />
-        @else
-            <img src="{{ asset('images/blog-default.jpg') }}" 
-                alt="{{ $blog->title }}" 
-                class="absolute inset-0 w-full h-full object-cover"
-            />
-        @endif
-        <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
-        <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
-            <h1 class="text-4xl font-medium text-white mb-4 text-center">{{ $blog->title }}</h1>
-            <div class="text-white text-lg">
-                <a href="{{ route('home') }}" class="hover:text-[#009EF5] transition-colors">Home</a> 
+<div class="relative container mx-auto px-4 h-full flex flex-col items-left">
+            <div class="text-gray-600 text-lg">
+                <a href="{{ route('home') }}" class="hover:text-blue-400 transition-colors">Home</a> 
                 <span class="mx-2">/</span>
-                <a href="{{ route('blog') }}" class="hover:text-[#009EF5] transition-colors">Blog</a>
+                <a href="{{ route('blog') }}" class="hover:text-blue-400 transition-colors">Blog</a>
                 <span class="mx-2">/</span>
-                <span class="text-[#009EF5]">{{ Str::limit($blog->title, 30) }}</span>
+                <span class="text-blue-400">{{ $blog->title }}</span>
             </div>
         </div>
-    </section>
 
     <!-- Blog Content Section -->
     <section class="py-16">
@@ -65,7 +53,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             @foreach($relatedBlogs as $relatedBlog)
                                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                                    <a href="{{ route('blog.show', $relatedBlog->slug) }}" class="block">
+                                    <a href="{{ route('blog.show', $relatedBlog->id) }}" class="block">
                                         <div class="relative h-48">
                                             @if($relatedBlog->image)
                                                 <img src="{{ asset('storage/' . $relatedBlog->image) }}" 

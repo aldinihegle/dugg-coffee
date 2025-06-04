@@ -52,6 +52,22 @@
                 </div>
 
                 <div class="mb-4">
+                    <label for="sub_title" class="block text-gray-700 text-sm font-bold mb-2">Sub Title</label>
+                    <input type="text" name="sub_title" id="sub_title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('sub_title') border-red-500 @enderror" value="{{ old('sub_title', $menu->sub_title) }}">
+                    @error('sub_title')
+                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="sub_description" class="block text-gray-700 text-sm font-bold mb-2">Sub Description</label>
+                    <textarea name="sub_description" id="sub_description" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('sub_description') border-red-500 @enderror">{{ old('sub_description', $menu->sub_description) }}</textarea>
+                    @error('sub_description')
+                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-4">
                     <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Image</label>
                     @if($menu->image)
                         <div class="mb-2">
