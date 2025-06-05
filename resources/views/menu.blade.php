@@ -32,6 +32,10 @@
             <div class="flex justify-center mb-12 flex-wrap gap-2">
                 <button class="px-6 py-2 rounded-full {{ !$category ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }}"
                         onclick="window.location.href='{{ route('menu') }}'">
+                    All Menu
+                </button>
+                <button class="px-6 py-2 rounded-full {{ $category === 'Beverages' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }}"
+                        onclick="window.location.href='{{ route('menu', ['category' => 'Beverages']) }}'">
                     Beverages
                 </button>
                 @foreach(['Seasonal', 'Signature', 'Snack', 'Main Course'] as $cat)

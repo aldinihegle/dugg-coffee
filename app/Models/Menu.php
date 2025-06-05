@@ -26,16 +26,29 @@ class Menu extends Model
     ];
 
     // Category constants
-    const CATEGORY_HOT_COFFEE = 'Hot Coffee';
-    const CATEGORY_COLD_COFFEE = 'Cold Coffee';
-    const CATEGORY_NON_COFFEE = 'Non-Coffee';
+    const CATEGORY_SEASONAL = 'Seasonal';
+    const CATEGORY_SIGNATURE = 'Signature';
+    const CATEGORY_SNACK = 'Snack';
+    const CATEGORY_MAIN_COURSE = 'Main Course';
+    const CATEGORY_BEVERAGES = 'Beverages';
 
     public static function categories()
     {
         return [
-            self::CATEGORY_HOT_COFFEE,
-            self::CATEGORY_COLD_COFFEE,
-            self::CATEGORY_NON_COFFEE
+            self::CATEGORY_BEVERAGES,
+            self::CATEGORY_SEASONAL,
+            self::CATEGORY_SIGNATURE,
+            self::CATEGORY_SNACK,
+            self::CATEGORY_MAIN_COURSE
+        ];
+    }
+
+    public static function beverageCategories()
+    {
+        return [
+            self::CATEGORY_SEASONAL,
+            self::CATEGORY_SIGNATURE,
+            self::CATEGORY_BEVERAGES
         ];
     }
 }

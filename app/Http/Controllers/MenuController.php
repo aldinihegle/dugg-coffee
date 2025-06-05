@@ -11,12 +11,16 @@ class MenuController extends Controller
     public function index(Request $request)
     {
         $category = $request->query('category');
-        
         $query = Menu::where('is_active', true);
         
-        if ($category && $category !== 'all') {
+        if ($category === 'Beverages') {
+            // Jika kategori Beverages, tampilkan Seasonal dan Signature
+            $query->whereIn('category', Menu::beverageCategories());
+        } elseif ($category && $category !== 'all') {
+            // Jika kategori lain dipilih
             $query->where('category', $category);
         }
+        // Jika tidak ada kategori, tampilkan semua menu
         
         $menuItems = $query->get();
         $categories = Menu::categories();

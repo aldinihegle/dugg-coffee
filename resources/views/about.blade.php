@@ -51,7 +51,7 @@
     </section>
 
     <!-- Location Section -->
-    <section class="mb-8 relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/FeedsDuggDetails1.jpg') }}');">
+    <section class="mb-16 relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/FeedsDuggDetails1.jpg') }}');">
         <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
         <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
             <div class="mb-4 text-center">

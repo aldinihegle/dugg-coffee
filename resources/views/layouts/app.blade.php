@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Dugg Coffee') }}</title>
+    <title>@yield('title', 'Welcome') - Dugg Coffee</title>
 
-    @vite('resources/js/app.js')
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo/logo1.png') }}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    @vite('resources/css/app.css')
 
     <!-- Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -84,7 +92,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Logo and Social Links -->
                 <div class="flex flex-col items-center space-y-4">
-                    <img src="{{ asset('images/logo/logofooter.png') }}" alt="Dugg Coffee" class="w-[200px] h-[150px]">
+                    <img src="{{ asset('images/logo/logofooter.png') }}" alt="Dugg Coffee" class="w-[150px] h-[150px]">
                     <div class="flex justify-center space-x-6">
                         <a href="#" class="text-blue-400 hover:text-blue-500 text-xl"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-blue-400 hover:text-blue-500 text-xl"><i class="fab fa-twitter"></i></a>

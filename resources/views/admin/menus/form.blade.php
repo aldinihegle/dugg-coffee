@@ -30,6 +30,19 @@
                         @enderror
                     </div>
 
+                    <!-- Sub Title -->
+                    <div>
+                        <label for="sub_title" class="block text-sm font-medium text-gray-700">Sub Title</label>
+                        <input type="text" 
+                               name="sub_title" 
+                               id="sub_title" 
+                               value="{{ old('sub_title', $menu->sub_title ?? '') }}"
+                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        @error('sub_title')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+
                     <!-- Category -->
                     <div>
                         <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
@@ -71,6 +84,18 @@
                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                                   required>{{ old('description', $menu->description ?? '') }}</textarea>
                         @error('description')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Sub Description -->
+                    <div>
+                        <label for="sub_description" class="block text-sm font-medium text-gray-700">Sub Description</label>
+                        <textarea name="sub_description" 
+                                  id="sub_description" 
+                                  rows="3"
+                                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('sub_description', $menu->sub_description ?? '') }}</textarea>
+                        @error('sub_description')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>

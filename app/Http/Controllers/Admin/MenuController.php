@@ -32,7 +32,9 @@ class MenuController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'sub_title' => 'nullable|string|max:255',
             'description' => 'required|string',
+            'sub_description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
             'category' => 'required|string|in:' . implode(',', $this->categories),
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -64,7 +66,9 @@ class MenuController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'sub_title' => 'nullable|string|max:255',
             'description' => 'required|string',
+            'sub_description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
             'category' => 'required|string|in:' . implode(',', $this->categories),
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',

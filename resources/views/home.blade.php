@@ -9,7 +9,7 @@
                 <h1 class="text-2xl md:text-3xl font-semibold mb-4 text-[#FEE8AE]">MADE WITH LOVE IN BANDUNG</h1>
                 <h2 class="text-5xl md:text-6xl font-normal mb-8 text-white">FRESHLY ROASTED,</h2>
                 <h2 class="text-5xl md:text-6xl font-normal mb-8 text-white">HONESTLY CRAFTED</h2>
-                <a href="{{ route('menu') }}" class="inline-block px-8 py-4 bg-[#009EF5] hover:bg-blue-600 rounded-lg text-lg font-medium transition-colors text-white">
+                <a href="/menu" class="inline-block px-8 py-4 bg-[#009EF5] hover:bg-blue-600 rounded-lg text-lg font-medium transition-colors text-white">
                     View Our Menu
                 </a>
             </div>
@@ -104,7 +104,8 @@
                     <p class="text-gray-600 mb-3">
                     Di Dugg Coffee, kami percaya kopi bukan sekadar minuman — tapi pengalaman. Setiap gelas diracik dari biji pilihan dan diseduh dengan penuh perhatian, agar menghadirkan rasa yang berkarakter dan konsisten. Kami memegang filosofi: kopi yang baik dimulai dari kualitas dan rasa yang jujur. Dari aroma pertama hingga tegukan terakhir, kamu akan merasakan bedanya.
                     </p>
-                    <a href="{{ route('about') }}" class="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                    </p>
+                    <a href="#" class="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
                         Know us better
                     </a>
                 </div>
@@ -124,7 +125,7 @@
             </div>
             <div class="flex justify-between items-center mb-2">
                 <h2 class="text-4xl font-bold text-white">Our <span class="text-blue">Menu</span></h2>
-                <a href="{{ route('menu') }}" class="bg-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">See more</a>
+                <a href="#" class="bg-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">See more</a>
             </div>
 
             <p class="text-white/80 max-w-2xl mb-6">Varian menu dengan kekuatan bahan-bahan pilihan yang dapat meningkatkan pengalaman ngopi harianmu</p>
@@ -221,7 +222,7 @@
             <div class="h-[1px] w-[120px] bg-black mx-auto mt-2">
         </div>
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Our <span class="text-[#009EF5]">Customer</span></h2>
+                <h2 class="text-3xl font-bold mb-4">Our Customer</h2>
                 <div class="flex justify-center items-center mb-4">
                     <span class="text-2xl font-bold">{{ number_format($averageRating, 1) }}</span>
                     <div class="flex text-yellow-400 ml-2">
@@ -230,9 +231,6 @@
                         @endfor
                     </div>
                 </div>
-                <button onclick="openReviewModal()" class="bg-[#009EF5] hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-colors">
-                    Make A Review
-                </button>
             </div>
 
             <!-- Success Alert -->
@@ -269,7 +267,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @forelse($featuredReviews as $review)
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <div class="flex items-center justify-center mb-4">
+                        <div class="flex items-center mb-4">
                             @if($review->avatar)
                                 <img src="{{ asset('storage/' . $review->avatar) }}" alt="{{ $review->name }}" class="w-12 h-12 rounded-full mr-4 object-cover">
                             @else
@@ -296,6 +294,9 @@
                     </div>
                 @endforelse
             </div>
+                            <button onclick="openReviewModal()" class=" mt-2 bg-[#009EF5] hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-colors">
+                    Make A Review
+                </button>
         </div>
 
         <!-- Review Modal -->
@@ -424,9 +425,11 @@
         </div>
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-2">Recent <span class="text-[#009EF5]">News</span></h2>
-                <p class="text-gray-600">Dibawah ini berisikan berita-berita dan tren-tren terkini dan ter update seputar kopi di seluruh dunia</p>
+                <h2 class="text-3xl font-bold mb-2">Recent News</h2>
+                <h3 class="text-2xl font-bold mb-4">Latest <span class="text-[#009EF5]">Updates</span></h3>
+                <p class="text-gray-600">Stay updated with our latest news and coffee stories</p>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @php
                     $recentBlogs = App\Models\Blog::where('is_published', true)
@@ -437,7 +440,7 @@
 
                 @forelse($recentBlogs as $blog)
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105">
-                        <a href="{{ route('blog.show', $blog->id) }}" class="block">
+                        <a href="{{ route('blog.show', $blog) }}" class="block">
                             <div class="relative h-48">
                                 @if($blog->image)
                                     <img 
@@ -545,23 +548,15 @@
         </div>
     </div>
 </section>
-    <!-- Location Section -->
-    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/FeedsDuggDetails1.jpg') }}');">
+ <!-- Location Section -->
+    <section class="relative h-[300px] bg-cover bg-center" style="background-image: url('{{ asset('images/FeedsDuggDetails1.jpg') }}');">
         <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
         <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-            <div class="mb-4 text-center">
-                <div class="flex items-center mb-1 justify-center space-x-2"> 
-                    <i class="fas fa-map-marker-alt text-white text-sm"></i>
-                    <span class="text-white text-sm tracking-widest font-bold">LOCATION</span>
-                </div>
-                <div class="h-[1px] w-[120px] bg-white mx-auto mt-2"></div>
-            </div>
-            <h2 class="text-4xl font-bold text-white mb-8">We're Located On Gegerkalong Girang Street, In Sukasari, Bandung.</h2>
-            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center px-3 py-2 bg-blue-600 text-sm hover:bg-blue-700 text-white rounded-lg transition-colors">
+            <p class="text-white text-3xl mb-8">Jl. Gegerkalong Girang No.66, Isola, Kec. Sukasari, Kota Bandung, Jawa Barat 40153</p>
+            <a href="https://maps.google.com" target="_blank" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
                 Locate Us On Maps
-                <i class="fas fa-arrow-right ml-2"></i>
             </a>
-            <p class="text-sm font-bold text-[#FEE8AE] mt-8 underline">Jl. Gegerkalong Girang No.66, Isola, Kec. Sukasari, Kota Bandung, Jawa Barat 40153</p>
+            <h2 class="text-sm font-medium text-white mb-6">We're Located On Gegerkalong Girang Street, In Sukasari, Bandung.</h2>
         </div>
     </section>
     <!-- Instagram Feed Section -->
