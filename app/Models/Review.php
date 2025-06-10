@@ -11,16 +11,15 @@ class Review extends Model
 
     protected $fillable = [
         'name',
-        'email',
-        'comment',
         'rating',
-        'avatar',
+        'comment',
         'is_approved',
         'show_in_homepage'
     ];
 
     protected $casts = [
+        'rating' => 'integer',
         'is_approved' => 'boolean',
-        'show_in_homepage' => 'boolean',
+        'show_in_homepage' => 'boolean'
     ];
 }

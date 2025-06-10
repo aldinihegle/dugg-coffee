@@ -37,7 +37,7 @@ class MenuController extends Controller
             'sub_description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
             'category' => 'required|string|in:' . implode(',', $this->categories),
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:8048',
             'is_active' => 'boolean'
         ]);
 

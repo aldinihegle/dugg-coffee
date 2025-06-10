@@ -9,14 +9,21 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $featuredReviews = Review::where('is_approved', true)
-            ->where('show_in_homepage', true)
-            ->latest()
-            ->take(3)
-            ->get();
+        try {
+            $reviews = Review::where('is_approved', true)
+                ->where('show_in_homepage', true)
+                ->latest()
+                ->get();
 
-        $averageRating = Review::where('is_approved', true)->avg('rating') ?? 5.0;
+            $averageRating = Review::where('is_approved', true)
+                ->avg('rating') ?? 0;
 
-        return view('home', compact('featuredReviews', 'averageRating'));
+            return view('home', compact('reviews', 'averageRating'));
+        } catch (\Exception $e) {
+            return view('home', [
+                'reviews' => collect(),
+                'averageRating' => 0
+            ]);
+        }
     }
-} 
+}

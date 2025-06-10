@@ -114,105 +114,105 @@
     </section>
 
 <!-- Menu Section -->
-    <section class="relative py-16 bg-[#2E2E2E]">
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="mb-4">
-                <div class="flex items-center mb-1">
-                    <i class="fas fa-book-reader text-blue text-sm mr-2"></i>
-                    <span class="text-blue text-sm  tracking-widest font-bold">MENU</span>
-                </div>
-                <div class="h-[1px] w-[120px] bg-blue"></div>
+<section class="relative py-16 bg-[#2E2E2E]">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="mb-4">
+            <div class="flex items-center mb-1">
+                <i class="fas fa-book-reader text-blue text-sm mr-2"></i>
+                <span class="text-blue text-sm  tracking-widest font-bold">MENU</span>
             </div>
-            <div class="flex justify-between items-center mb-2">
-                <h2 class="text-4xl font-bold text-white">Our <span class="text-blue">Menu</span></h2>
-                <a href="#" class="bg-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">See more</a>
-            </div>
-
-            <p class="text-white/80 max-w-2xl mb-6">Varian menu dengan kekuatan bahan-bahan pilihan yang dapat meningkatkan pengalaman ngopi harianmu</p>
-
-            <div class="flex gap-8">
-                <!-- Left Side: 2x2 Grid -->
-                <div class="grid grid-cols-2 gap-6 flex-[2]">
-                    <!-- Menu Item 1 -->
-                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
-                        <div class="relative mb-3">
-                            <img src="{{ asset('images/menu/baby-on-black.png') }}" alt="Baby on Black" class="w-full h-40 object-cover rounded-lg">
-                        </div>
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-gray-900 font-semibold mb-1">Baby on Black</h3>
-                                <p class="text-gray-600 text-sm leading-snug">Chocolate roasted dengan segelas kopi hitam yang pekat</p>
-                            </div>
-                            <span class="text-blue font-bold text-lg">27K</span>
-            </div>
+            <div class="h-[1px] w-[120px] bg-blue"></div>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+            <h2 class="text-4xl font-bold text-white">Our <span class="text-blue">Menu</span></h2>
+            <a href="/menu" class="bg-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">See more</a>
         </div>
 
-                    <!-- Menu Item 2 -->
-                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
-                        <div class="relative mb-3">
-                            <img src="{{ asset('images/menu/es-kopi-susu.png') }}" alt="Es Kopi Susu" class="w-full h-40 object-cover rounded-lg">
-                </div>
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-gray-900 font-semibold mb-1">Es Kopi Susu</h3>
-                                <p class="text-gray-600 text-sm leading-snug">Kopi susu klasik dengan es batu, segar dan nikmat</p>
-            </div>
-                            <span class="text-blue font-bold text-lg">23K</span>
-                </div>
+        <p class="text-white/80 max-w-2xl mb-6">Varian menu dengan kekuatan bahan-bahan pilihan yang dapat meningkatkan pengalaman ngopi harianmu</p>
+
+        <div class="flex gap-8">
+            <!-- Left Side: 2x2 Grid -->
+            <div class="grid grid-cols-2 gap-6 flex-[2]">
+                <!-- Menu Item 1 -->
+                <a href="/menu" class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg block">
+                    <div class="relative mb-3">
+                        <img src="{{ asset('images/menu/baby-on-black.png') }}" alt="Baby on Black" class="w-full h-40 object-cover rounded-lg">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-gray-900 font-semibold mb-1">Baby on Black</h3>
+                            <p class="text-gray-600 text-sm leading-snug">Chocolate roasted dengan segelas kopi hitam yang pekat</p>
+                        </div>
+                        <span class="text-blue font-bold text-lg">27K</span>
+                    </div>
+                </a>
+
+                <!-- Menu Item 2 -->
+                <a href="/menu" class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg block">
+                    <div class="relative mb-3">
+                        <img src="{{ asset('images/menu/es-kopi-susu.png') }}" alt="Es Kopi Susu" class="w-full h-40 object-cover rounded-lg">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-gray-900 font-semibold mb-1">Es Kopi Susu</h3>
+                            <p class="text-gray-600 text-sm leading-snug">Kopi susu klasik dengan es batu, segar dan nikmat</p>
+                        </div>
+                        <span class="text-blue font-bold text-lg">23K</span>
+                    </div>
+                </a>
+
+                <!-- Menu Item 3 -->
+                <a href="/menu" class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg block">
+                    <div class="relative mb-3">
+                        <img src="{{ asset('images/menu/hot-latte.png') }}" alt="Hot Latte" class="w-full h-40 object-cover rounded-lg">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-gray-900 font-semibold mb-1">Hot Latte</h3>
+                            <p class="text-gray-600 text-sm leading-snug">Espresso dan susu panas dengan busa lembut</p>
+                        </div>
+                        <span class="text-blue font-bold text-lg">25K</span>
+                    </div>
+                </a>
+
+                <!-- Menu Item 4 -->
+                <a href="/menu" class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg block">
+                    <div class="relative mb-3">
+                        <img src="{{ asset('images/menu/chocolate.png') }}" alt="Chocolate" class="w-full h-40 object-cover rounded-lg">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-gray-900 font-semibold mb-1">Chocolate</h3>
+                            <p class="text-gray-600 text-sm leading-snug">Coklat panas dengan sentuhan manis dan lembut</p>
+                        </div>
+                        <span class="text-blue font-bold text-lg">20K</span>
+                    </div>
+                </a>
             </div>
 
-            <!-- Menu Item 3 -->
-                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
-                        <div class="relative mb-3">
-                            <img src="{{ asset('images/menu/hot-latte.png') }}" alt="Hot Latte" class="w-full h-40 object-cover rounded-lg">
+            <!-- Right Side: Featured Item -->
+            <a href="/menu" class="flex-1 block">
+                <div class="bg-white rounded-lg h-full relative overflow-hidden group shadow-lg">
+                    <img src="{{ asset('images/menu/matcha-feature.png') }}" alt="Matcha" class="w-full h-full object-cover transition-transform group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-yellow-400 text-xl">★</span>
+                            <span class="text-sm font-medium text-white bg-blue/20 px-3 py-1 rounded-full">Best Seller</span>
                         </div>
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-gray-900 font-semibold mb-1">Hot Latte</h3>
-                                <p class="text-gray-600 text-sm leading-snug">Espresso dan susu panas dengan busa lembut</p>
-                            </div>
-                            <span class="text-blue font-bold text-lg">25K</span>
-                </div>
-            </div>
-
-            <!-- Menu Item 4 -->
-                    <div class="bg-white p-4 rounded-lg hover:-translate-y-1 transition-transform group shadow-lg">
-                        <div class="relative mb-3">
-                            <img src="{{ asset('images/menu/chocolate.png') }}" alt="Chocolate" class="w-full h-40 object-cover rounded-lg">
-                        </div>
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-gray-900 font-semibold mb-1">Chocolate</h3>
-                                <p class="text-gray-600 text-sm leading-snug">Coklat panas dengan sentuhan manis dan lembut</p>
-                            </div>
-                            <span class="text-blue font-bold text-lg">20K</span>
-                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">Matcha</h3>
+                        <p class="text-gray-200 text-sm mb-3">Green tea dengan tekstur yang lembut</p>
+                        <span class="text-blue font-semibold text-xl">30K</span>
                     </div>
                 </div>
-
-                <!-- Right Side: Featured Item -->
-                <div class="flex-1">
-                    <div class="bg-white rounded-lg h-full relative overflow-hidden group shadow-lg">
-                        <img src="{{ asset('images/menu/matcha-feature.png') }}" alt="Matcha" class="w-full h-full object-cover transition-transform group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-yellow-400 text-xl">★</span>
-                                <span class="text-sm font-medium text-white bg-blue/20 px-3 py-1 rounded-full">Best Seller</span>
-            </div>
-                            <h3 class="text-3xl font-bold text-white mb-2">Matcha</h3>
-                            <p class="text-gray-200 text-sm mb-3">Green tea dengan tekstur yang lembut</p>
-                            <span class="text-blue font-semibold text-xl">30K</span>
-                </div>
-            </div>
-            </div>
+            </a>
         </div>
     </div>
 </section>
 
     <!-- Testimonials Section -->
 
-    <section class="py-16 bg-cream-100">
+    <section class="py-16 bg-cream-100 max-w-5xl mx-auto relative"> <!-- Added relative -->
     <div class="container mx-auto px-4 relative z-10">
         <div class="mb-4 text-center">
             <div class="flex items-center mb-1 justify-center space-x-2"> 
@@ -222,7 +222,9 @@
             <div class="h-[1px] w-[120px] bg-black mx-auto mt-2">
         </div>
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Our Customer</h2>
+                <h2 class="text-3xl font-bold mb-4">
+                    Our <span class="text-[#009EF5]">Customer</span>
+                </h2>
                 <div class="flex justify-center items-center mb-4">
                     <span class="text-2xl font-bold">{{ number_format($averageRating, 1) }}</span>
                     <div class="flex text-yellow-400 ml-2">
@@ -263,160 +265,261 @@
                 </script>
             @endif
 
-            <!-- Customer Reviews -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                @forelse($featuredReviews as $review)
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <div class="flex items-center mb-4">
-                            @if($review->avatar)
-                                <img src="{{ asset('storage/' . $review->avatar) }}" alt="{{ $review->name }}" class="w-12 h-12 rounded-full mr-4 object-cover">
-                            @else
-                                <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
-                                    <i class="fas fa-user text-gray-400"></i>
-                                </div>
-                            @endif
-                            <div>
-                                <h4 class="font-bold">{{ $review->name }}</h4>
-                                <div class="flex text-yellow-400">
-                                    @for ($star = 0; $star < $review->rating; $star++)
-                                        <i class="fas fa-star"></i>
-                                    @endfor
+            <!-- Customer Reviews with Navigation Buttons -->
+            <div class="relative overflow-hidden w-full">
+                <div class="reviews-container" id="reviewsContainer">
+                    <div class="flex transition-transform duration-300">
+                        @forelse($reviews as $review)
+                            <div class="flex-shrink-0 w-full md:w-1/3 px-4">
+                                <div class="bg-white p-6 rounded-lg shadow-lg h-[200px] flex flex-col justify-between items-center">
+                                    <!-- Review Content -->
+                                    <div>
+                                        <h4 class="font-semibold text-lg mb-2">{{ $review->name }}</h4>
+                                        <div class="flex text-yellow-400 mb-3 items-center justify-center">
+                                            @for($i = 0; $i < 5; $i++)
+                                                @if($i < $review->rating)
+                                                    <i class="fas fa-star"></i>
+                                                @else
+                                                    <i class="far fa-star"></i>
+                                                @endif
+                                            @endfor
+                                        </div>
+                                        <p class="text-gray-600 line-clamp-3">{{ $review->comment }}</p>
+                                    </div>
+                                    
+                                    <!-- Review Date -->
+                                    <div class="text-sm text-gray-400 mt-4">
+                                        {{ $review->created_at->format('d/m/Y') }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <p class="text-gray-600">
-                            "{{ $review->comment }}"
-                        </p>
+                        @empty
+                            <div class="flex-shrink-0 w-full px-4">
+                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                                    <p class="text-gray-500">No reviews available yet.</p>
+                                </div>
+                            </div>
+                        @endforelse
                     </div>
-                @empty
-                    <div class="col-span-3 text-center text-gray-500">
-                        No reviews yet. Be the first to review!
-                    </div>
-                @endforelse
-            </div>
-                            <button onclick="openReviewModal()" class=" mt-2 bg-[#009EF5] hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-colors">
-                    Make A Review
-                </button>
-        </div>
-
-        <!-- Review Modal -->
-        <div id="reviewModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-            <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-bold">Make A Review</h2>
-                    <button onclick="closeReviewModal()" class="text-gray-500 hover:text-gray-700">
-                        <i class="fas fa-times"></i>
-                    </button>
                 </div>
 
-                <form action="{{ route('reviews.store') }}" method="POST" class="space-y-6" id="reviewForm" onsubmit="return validateReviewForm()">
-                    @csrf
-                    <div>
-                        <label class="block text-gray-700 text-lg mb-2" for="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Your Name..." required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                    </div>
-
-                    <div>
-                        <label class="block text-gray-700 text-lg mb-2" for="comment">Message</label>
-                        <textarea name="comment" id="comment" rows="4" placeholder="Your Review..." required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
-
-                    <div>
-                        <label class="block text-gray-700 text-lg mb-2">Rate</label>
-                        <div class="flex gap-4" id="ratingStars">
-                            @for($i = 1; $i <= 5; $i++)
-                                <button type="button" onclick="setRating({{ $i }})" class="text-3xl text-gray-300 hover:text-yellow-400 focus:outline-none star-rating">
-                                    ★
-                                </button>
-                @endfor
-                        </div>
-                        <input type="hidden" name="rating" id="ratingInput" value="" required>
-                        <div id="ratingError" class="text-red-500 text-sm mt-1 hidden">Please select a rating</div>
-                    </div>
-
-                    <button type="submit" class="w-full bg-[#009EF5] hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">
-                        SUBMIT
-                    </button>
-                </form>
+                <!-- Navigation Buttons -->
+                <button id="prevButton" 
+                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all"
+                        disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <button id="nextButton"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
 
-        @push('scripts')
-        <script>
-            function validateReviewForm() {
-                const rating = document.getElementById('ratingInput').value;
-                const ratingError = document.getElementById('ratingError');
-                
-                if (!rating) {
-                    ratingError.classList.remove('hidden');
-                    return false;
-                }
-                
-                ratingError.classList.add('hidden');
-                return true;
-            }
+        <!-- Review Button -->
+        <div class="text-center mt-8">
+            <button onclick="openReviewModal()" class="border border-[#009EF5] text-[#009EF5] font-bold py-2 px-8 rounded-full transition-colors hover:bg-[#009EF5] hover:text-white tracking-widest text-base" style="letter-spacing: 2px;">
+            MAKE A REVIEW
+            </button>
+        </div>
+        </div>
 
-            function openReviewModal() {
-                document.getElementById('reviewModal').classList.remove('hidden');
-                document.getElementById('reviewModal').classList.add('flex');
-                document.body.style.overflow = 'hidden';
-                // Reset form when opening modal
-                document.getElementById('reviewForm').reset();
-                // Reset stars
-                document.querySelectorAll('.star-rating').forEach(star => {
-                    star.classList.remove('text-yellow-400');
-                    star.classList.add('text-gray-300');
-                });
-                document.getElementById('ratingInput').value = '';
-                document.getElementById('ratingError').classList.add('hidden');
-            }
+    <!-- Review Modal - Modified for better stacking -->
+    <div id="reviewModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[9999]" onclick="closeReviewModal()">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative" onclick="event.stopPropagation();">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Make A Review</h2>
+                <button type="button" onclick="closeReviewModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
 
-            function closeReviewModal() {
-                document.getElementById('reviewModal').classList.add('hidden');
-                document.getElementById('reviewModal').classList.remove('flex');
-                document.body.style.overflow = 'auto';
-            }
+            <form method="POST" action="{{ route('reviews.store') }}" id="reviewForm">
+                @csrf
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 text-lg mb-2" for="name">Name</label>
+                        <input type="text" 
+                               name="name" 
+                               id="name" 
+                               required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
 
-            function setRating(rating) {
-                document.getElementById('ratingInput').value = rating;
-                const stars = document.querySelectorAll('.star-rating');
-                stars.forEach((star, index) => {
-                    if (index < rating) {
-                        star.classList.add('text-yellow-400');
-                        star.classList.remove('text-gray-300');
-                    } else {
-                        star.classList.remove('text-yellow-400');
-                        star.classList.add('text-gray-300');
-                    }
-                });
-                document.getElementById('ratingError').classList.add('hidden');
-            }
+                    <div>
+                        <label class="block text-gray-700 text-lg mb-2">Rating</label>
+                        <div class="flex gap-2">
+                            @for($i = 1; $i <= 5; $i++)
+                                <button type="button" 
+                                        class="text-2xl text-gray-300 hover:text-yellow-400 cursor-pointer star-rating"
+                                        onclick="setRating({{ $i }})">★</button>
+                            @endfor
+                        </div>
+                        <input type="hidden" name="rating" id="ratingInput" required>
+                    </div>
 
-            // Close modal when clicking outside
-            document.getElementById('reviewModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeReviewModal();
-                }
-            });
+                    <div>
+                        <label class="block text-gray-700 text-lg mb-2" for="comment">Review</label>
+                        <textarea name="comment" 
+                                  id="comment" 
+                                  rows="4" 
+                                  required
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                    </div>
 
-            // Debug form submission
-            document.getElementById('reviewForm').addEventListener('submit', function(e) {
-                const formData = new FormData(this);
-                console.log('Form data being submitted:');
-                for (let pair of formData.entries()) {
-                    console.log(pair[0] + ': ' + pair[1]);
-                }
-            });
-        </script>
-        @endpush
+                    <button type="submit" 
+                            class="w-full bg-[#009EF5] hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                        Submit Review
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get required elements
+    const container = document.querySelector('#reviewsContainer .flex');
+    const slides = container.children;
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    
+    // Slider variables
+    let currentIndex = 0;
+    const slideWidth = slides[0].offsetWidth;
+    const totalSlides = slides.length;
+    const slidesPerView = window.innerWidth >= 768 ? 3 : 1;
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
+
+    // Function to update button states
+    function updateButtonState() {
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= maxIndex;
+        
+        // Update button appearance
+        prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextButton.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+    }
+
+    // Function to slide reviews
+    function slideReviews(direction) {
+        if (direction === 'prev' && currentIndex > 0) {
+            currentIndex--;
+        } else if (direction === 'next' && currentIndex < maxIndex) {
+            currentIndex++;
+        }
+
+        // Transform container
+        container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        updateButtonState();
+    }
+
+    // Add event listeners for buttons
+    prevButton.addEventListener('click', () => slideReviews('prev'));
+    nextButton.addEventListener('click', () => slideReviews('next'));
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newSlidesPerView = window.innerWidth >= 768 ? 3 : 1;
+        const newMaxIndex = Math.max(0, totalSlides - newSlidesPerView);
+        
+        // Reset position if needed
+        if (currentIndex > newMaxIndex) {
+            currentIndex = newMaxIndex;
+            container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+        
+        updateButtonState();
+    });
+
+    // Initialize button states
+    updateButtonState();
+});
+
+// Modal open/close functions
+function openReviewModal() {
+    document.getElementById('reviewModal').classList.remove('hidden');
+    document.getElementById('reviewModal').classList.add('flex');
+}
+function closeReviewModal() {
+    document.getElementById('reviewModal').classList.add('hidden');
+    document.getElementById('reviewModal').classList.remove('flex');
+}
+
+// Rating functionality
+function setRating(rating) {
+    const stars = document.querySelectorAll('.star-rating');
+    const ratingInput = document.getElementById('ratingInput');
+    const ratingError = document.getElementById('ratingError');
+    
+    // Set rating value
+    ratingInput.value = rating;
+    
+    // Update stars appearance
+    stars.forEach((star, index) => {
+        if (index < rating) {
+            star.classList.remove('text-gray-300');
+            star.classList.add('text-yellow-400');
+        } else {
+            star.classList.remove('text-yellow-400');
+            star.classList.add('text-gray-300');
+        }
+    });
+    
+    // Hide error message if rating is selected
+    ratingError.classList.add('hidden');
+}
+
+// Form validation
+document.getElementById('reviewForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const ratingInput = document.getElementById('ratingInput');
+    const ratingError = document.getElementById('ratingError');
+    
+    // Validasi rating
+    if (!ratingInput.value) {
+        ratingError.classList.remove('hidden');
+        return;
+    }
+    
+    // Submit form jika validasi berhasil
+    this.submit();
+});
+
+// Reset form when modal is closed
+function closeReviewModal() {
+    const modal = document.getElementById('reviewModal');
+    const form = document.getElementById('reviewForm');
+    const stars = document.querySelectorAll('.star-rating');
+    
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    
+    // Reset form
+    form.reset();
+    document.getElementById('ratingInput').value = '';
+    
+    // Reset stars
+    stars.forEach(star => {
+        star.classList.remove('text-yellow-400');
+        star.classList.add('text-gray-300');
+    });
+    
+    // Hide error message
+    document.getElementById('ratingError').classList.add('hidden');
+}
+</script>
+@endpush
     </section>
 
     <!-- Recent News Section -->
     <section class="py-16 bg-blue-50">
     <div class="container mx-auto px-4 relative z-10">
-        <div class="mb-4 text-center">
+        <div class="text-center">
             <div class="flex items-center mb-1 justify-center space-x-2"> 
                 <i class="fas fa-book-reader text-black text-sm"></i>
                 <span class="text-black text-sm tracking-widest font-bold">BLOGS</span>
@@ -609,4 +712,4 @@
             </div>
         </div>
     </section>
-@endsection 
+@endsection

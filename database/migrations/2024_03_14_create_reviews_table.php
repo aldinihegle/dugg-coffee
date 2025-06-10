@@ -6,23 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up(): void
+    public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
-            $table->text('comment');
             $table->integer('rating');
-            $table->string('avatar')->nullable();
+            $table->text('comment');
             $table->boolean('is_approved')->default(false);
             $table->boolean('show_in_homepage')->default(false);
             $table->timestamps();
         });
     }
 
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('reviews');
     }
-}; 
+};

@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Frontend\ReviewController as FrontendReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,14 +43,14 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Public routes
-Route::post('/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
+Route::post('/reviews', [FrontendReviewController::class, 'store'])->name('reviews.store');
 
 // Admin Routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('menus', App\Http\Controllers\Admin\MenuController::class);
     Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
-    Route::resource('reviews', App\Http\Controllers\Admin\ReviewController::class);
-    Route::post('reviews/{review}/toggle-approval', [App\Http\Controllers\Admin\ReviewController::class, 'toggleApproval'])->name('reviews.toggle-approval');
-    Route::post('reviews/{review}/toggle-homepage', [App\Http\Controllers\Admin\ReviewController::class, 'toggleHomepage'])->name('reviews.toggle-homepage');
+    Route::resource('reviews', AdminReviewController::class);
+    Route::post('reviews/{review}/toggle-approval', [AdminReviewController::class, 'toggleApproval'])->name('reviews.toggle-approval');
+    Route::post('reviews/{review}/toggle-homepage', [AdminReviewController::class, 'toggleHomepage'])->name('reviews.toggle-homepage');
 });

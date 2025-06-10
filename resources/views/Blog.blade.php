@@ -2,41 +2,33 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative h-[400px] bg-cover bg-center pt-24" style="background-image: url('{{ asset('images/blog-hero.jpg') }}');">
-    <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
-    <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
-        <h1 class="text-5xl font-medium text-white mb-4">Our <span class="text-blue-400">Blog</span></h1>
-        <div class="text-white text-lg">
-            <a href="{{ route('home') }}" class="hover:text-blue-400 transition-colors">Home</a> 
-            <span class="mx-2">/</span> 
-            <span class="text-blue-400">Our Blog</span>
+    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/blog-hero.jpg') }}');">
+        <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
+        <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
+            <h1 class="text-5xl font-medium text-white mb-4">Our <span class="text-blue-400">Blog</span></h1>
+            <div class="text-white text-lg">
+                <a href="{{ route('home') }}" class="hover:text-blue-400 transition-colors">Home</a> 
+                <span class="mx-2">/</span> 
+                <span class="text-blue-400">Blog</span>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Menu Section -->
+    <!-- Blog Posts Section -->
     <section class="py-16">
         <div class="container mx-auto px-4">
-        <div class="mb-4 text-center">
-            <div class="flex items-center mb-1 justify-center space-x-2"> 
-                <i class="fas fa-book-reader text-black text-sm"></i>
-                <span class="text-black text-sm tracking-widest font-bold">BLOG</span>
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <span class="text-sm text-gray-500 uppercase">BLOGS</span>
+                <h2 class="text-3xl font-bold mt-2">All News</h2>
+                <p class="text-gray-600 mt-2">Silahkan ini berbagai berita dan update dari Dugg Coffee</p>
             </div>
-            <div class="h-[1px] w-[120px] bg-black mx-auto mt-2">
-        </div>
-                <h2 class="text-3xl font-bold mt-2">All <span class="text-[#009EF5]">Blog</span></h2>
-                <p class="text-gray-600 mt-2">Silahkan ini berbagai blog yang ada di Dugg Coffee yang sudah kami sediakan untuk anda.</p>
-            </div>
-
 
             <!-- Featured Blog -->
-            @if($blogs->where('is_featured', true)->first())
-                @php
-                    $featuredBlog = $blogs->where('is_featured', true)->first();
-                @endphp
+            @if($featuredBlog)
                 <div class="mb-16">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden align-right">
-                        <div class="md:flex">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="md:flex flex-row-reverse"> <!-- Tambahkan flex-row-reverse -->
                             <div class="md:w-1/2">
                                 @if($featuredBlog->image)
                                     <img 
@@ -46,19 +38,20 @@
                                     />
                                 @else
                                     <img 
-                                        src="{{ asset('images/blog-default.jpg') }}"
+                                        src="{{ asset('images/blog-default.png') }}"
                                         alt="{{ $featuredBlog->title }}"
                                         class="w-full h-[400px] object-cover"
                                     />
                                 @endif
                             </div>
                             <div class="md:w-1/2 p-8 flex flex-col justify-center">
-                                <div class="mb-4">
-                                </div>
                                 <h3 class="text-2xl font-bold mb-4 hover:text-[#009EF5] transition-colors">{{ $featuredBlog->title }}</h3>
                                 <p class="text-gray-600 mb-6 line-clamp-3">{{ strip_tags($featuredBlog->content) }}</p>
-                                <a href="{{ route('blog.show', $featuredBlog->id) }}" class="inline-block bg-white text-blue px-6 py-2 rounded-full hover:bg-blue-600 transition-colors text-white">
-                                    Read More
+                                <a href="{{ route('blog.show', $featuredBlog->id) }}" class="inline-flex items-center text-[#009EF5] hover:text-blue-600 transition-colors">
+                                    See More 
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
                                 </a>
                             </div>
                         </div>
@@ -68,10 +61,10 @@
 
             <!-- Blog Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                @forelse($blogs->where('is_featured', false) as $blog)
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                @forelse($regularBlogs as $blog)
+                    <div class="bg-[#FFF8E6] rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
                         <a href="{{ route('blog.show', $blog->id) }}" class="block">
-                            <div class="relative h-48">
+                            <div class="relative h-48 p-1">
                                 @if($blog->image)
                                     <img 
                                         src="{{ asset('storage/' . $blog->image) }}"
@@ -89,9 +82,12 @@
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-3 text-gray-900 hover:text-[#009EF5] transition-colors">{{ $blog->title }}</h3>
                                 <p class="text-gray-600 mb-4 line-clamp-3">{{ strip_tags($blog->content) }}</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="inline-block bg-[#009EF5] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors text-sm">
-                                        Read More
+                                <div class="flex justify-end my-10">
+                                    <span class="inline-flex items-center text-[#009EF5] font-semibold hover:text-blue-600 transition-colors">
+                                        See More 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
                                     </span>
                                 </div>
                             </div>
@@ -108,9 +104,48 @@
             </div>
 
             <!-- Pagination -->
-            @if($blogs->hasPages())
-                <div class="mt-12">
-                    {{ $blogs->links() }}
+            @if($regularBlogs->hasPages())
+                <div class="mt-12 flex justify-center">
+                    <nav class="inline-flex items-center gap-1">
+                        {{-- Previous Page Link --}}
+                        @if ($regularBlogs->onFirstPage())
+                            <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-400 cursor-not-allowed">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        @else
+                            <a href="{{ $regularBlogs->previousPageUrl() }}" class="px-3 py-1 rounded-lg bg-[#009EF5] text-white hover:bg-blue-600 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        @endif
+
+                        {{-- Page Numbers --}}
+                        @foreach ($regularBlogs->getUrlRange(1, $regularBlogs->lastPage()) as $page => $url)
+                            @if ($page == $regularBlogs->currentPage())
+                                <span class="px-3 py-1 rounded-lg bg-[#009EF5] text-white">{{ $page }}</span>
+                            @else
+                                <a href="{{ $url }}" class="px-3 py-1 rounded-lg hover:bg-gray-100 transition-colors">{{ $page }}</a>
+                            @endif
+                        @endforeach
+
+                        {{-- Next Page Link --}}
+                        @if ($regularBlogs->hasMorePages())
+                            <a href="{{ $regularBlogs->nextPageUrl() }}" class="px-3 py-1 rounded-lg bg-[#009EF5] text-white hover:bg-blue-600 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        @else
+                            <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-400 cursor-not-allowed">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        @endif
+                    </nav>
                 </div>
             @endif
         </div>

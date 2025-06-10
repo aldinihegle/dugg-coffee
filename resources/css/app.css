@@ -362,3 +362,44 @@
 .text-blue {
     color: #009EF5;
 }
+
+.modal-open {
+    overflow: hidden;
+}
+
+.review-modal {
+    isolation: isolate;
+}
+
+/* Testimonial Slider Styles */
+.reviews-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-container .flex {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reviews-container .flex > div {
+    flex: 0 0 auto;
+}
+
+/* Button Navigation Styles */
+#prevButton,
+#nextButton {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+#prevButton:disabled,
+#nextButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#prevButton:hover:not(:disabled),
+#nextButton:hover:not(:disabled) {
+    opacity: 1;
+}

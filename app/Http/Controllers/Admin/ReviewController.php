@@ -47,7 +47,7 @@ class ReviewController extends Controller
             'email' => 'required|email',
             'rating' => 'required|integer|min:1|max:5',
             'comment' => 'required',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:8048',
             'is_approved' => 'boolean',
             'show_in_homepage' => 'boolean'
         ]);

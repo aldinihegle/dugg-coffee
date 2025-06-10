@@ -2,15 +2,15 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative h-[400px] bg-cover bg-center pt-24" style="background-image: url('{{ asset('images/aboutus.jpg') }}');">
-        <div class="absolute inset-0 bg-black/50"></div>
+    <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/aboutus.jpg') }}');">
+        <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
         <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
-            <h1 class="text-5xl font-bold text-white mb-4">About <span class="text-blue-400">Us</span></h1>
+            <h1 class="text-5xl font-semibold text-white mb-4">About <span class="text-blue-400">Us</span></h1>
             <div class="text-white text-lg">
                 <a href="{{ route('home') }}" class="hover:text-blue-400 transition-colors">Home</a> 
-                <span class="mx-2">></span> 
+                <span class="mx-2">/</span> 
                 <span class="text-blue-400">About Us</span>
-            </div>  
+            </div>
         </div>
     </section>
 

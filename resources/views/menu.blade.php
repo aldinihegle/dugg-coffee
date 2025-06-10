@@ -5,7 +5,7 @@
     <section class="relative h-[400px] bg-cover bg-center" style="background-image: url('{{ asset('images/menu-hero.jpg') }}');">
         <div class="absolute inset-0" style="background: rgba(0,158,245,0.2);"></div>
         <div class="relative container mx-auto px-4 h-full flex flex-col items-center justify-center">
-            <h1 class="text-5xl font-medium text-white mb-4">Our <span class="text-blue-400">Menu</span></h1>
+            <h1 class="text-5xl font-semibold text-white mb-4">Our <span class="text-blue-400">Menu</span></h1>
             <div class="text-white text-lg">
                 <a href="{{ route('home') }}" class="hover:text-blue-400 transition-colors">Home</a> 
                 <span class="mx-2">/</span> 
@@ -47,28 +47,28 @@
             </div>
 
             <!-- Menu Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-24">
                 @forelse($menuItems as $item)
-                    <div class="text-center">
+                    <div class="text-center bg-[#FFF8E6]">
+                        <h3 class="text-xl font-medium mb-2">{{ $item->name }}</h3>
+                        <span class="text-xl text-blue-600 font-semibold mb-2 ">{{ round($item->price/1000) }}K</span>
+                        @if($item->sub_title)
                         <a href="{{ route('menu.detail', $item->id) }}" class="block">
-                            <div class="relative mb-4">
+                            <div class="relative mb-4 mt-1 p-5">
                                 @if($item->image)
                                     <img src="{{ asset($item->image) }}" 
                                          alt="{{ $item->name }}" 
-                                         class="w-full h-64 object-cover rounded-lg"
+                                         class="w-80 h-80 object-cover"
                                     />
                                 @else
                                     <img src="{{ asset('images/menu/default.jpg') }}" 
                                          alt="{{ $item->name }}" 
-                                         class="w-full h-64 object-cover rounded-lg"
+                                         class="w-80 h-80 object-cover"
                                     />
                                 @endif
                             </div>
-                            <h3 class="text-xl font-semibold mb-2">{{ $item->name }}</h3>
-                            @if($item->sub_title)
-                                <h4 class="text-lg text-gray-700 mb-3">{{ $item->sub_title }}</h4>
+                                <h4 class="text-lg font-medium text-[#757F95] mb-3">{{ $item->sub_title }}</h4>
                             @endif
-                            <span class="text-blue-600 font-bold">{{ number_format($item->price, 0, ',', '.') }}K</span>
                         </a>
                     </div>
                 @empty
